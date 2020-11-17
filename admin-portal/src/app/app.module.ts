@@ -12,6 +12,8 @@ import { AuthModule } from './auth/auth.module';
 import { ServicesComponent } from './services/services.component';
 import { CompaniesListComponent } from './companies-list/companies-list.component';
 import { ProductsComponent } from './products/products.component';
+import { AddnewcompanyComponent } from './addnewcompany/addnewcompany.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,16 @@ import { ProductsComponent } from './products/products.component';
     ProfileComponent,
     ServicesComponent,
     CompaniesListComponent,
-    ProductsComponent
+    ProductsComponent,
+    AddnewcompanyComponent
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AuthModule
+    AuthModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -55,6 +55,7 @@ export class AuthService {
   }
 
   public getUsername(): string {
-    return this.decodedToken.username;
+    const str = this.decodedToken.username;
+    return str.charAt(0).toUpperCase() + str.substring(1);
   }
 }

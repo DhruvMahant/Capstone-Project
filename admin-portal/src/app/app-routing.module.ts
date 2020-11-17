@@ -9,13 +9,15 @@ import { AuthGuard } from './auth/auth.guard';
 import { ServicesComponent } from './services/services.component';
 import { CompaniesListComponent } from './companies-list/companies-list.component';
 import { ProductsComponent } from './products/products.component';
+import { AddnewcompanyComponent } from './addnewcompany/addnewcompany.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
  // { path: 'services', component: ServicesComponent, canActivate: [AuthGuard] },
   { path: 'companies-list', component: CompaniesListComponent, canActivate: [AuthGuard] },
-  { path: 'products', component: ProductsComponent, canActivate: [AuthGuard] }
+  { path: 'products', component: ProductsComponent, canActivate: [AuthGuard] },
+  { path: 'addnewcompany', component: AddnewcompanyComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

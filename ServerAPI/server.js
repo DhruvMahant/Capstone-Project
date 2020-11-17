@@ -7,6 +7,7 @@ const config = require('./DB');
 const adminRoute = require('./routes/AdminRoute');
 const companyRoute = require('./routes/companyRoute');
 const customerRoute = require('./routes/CustomerRoute');
+const productRoute = require('./routes/ProductRoute');
 
 const PORT = process.env.PORT || 5000;
 
@@ -34,6 +35,7 @@ app.use(cors(corsOptions))
 app.use('/api/admins', adminRoute);
 app.use('/api/company',companyRoute);
 app.use('/api/customer',customerRoute);
+app.use('/api/product',productRoute);
 
 app.listen(PORT, () => {
   console.log(`Server is running on PORT ${PORT}`);

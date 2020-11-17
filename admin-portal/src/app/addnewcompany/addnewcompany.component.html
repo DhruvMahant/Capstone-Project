@@ -1,0 +1,30 @@
+<br/>
+<br/>
+<br/>
+
+<div class="container-fluid">
+    <h2 class="text-center">Add New Company</h2>
+        <br/>
+        <br/>
+        <br/>
+    <div class="d-flex justify-content-center">
+        
+        <form class=""  [formGroup]="companyRef" (ngSubmit)="addNewCompany()">
+            <div class="form-row">
+                <div class="col ">
+                  <input type="text" formControlName="company" class="form-control" placeholder="Company Name">
+                </div>
+                <div class="col">
+                    <button type="submit" class="btn btn-info mb-2">Add Company</button>
+                </div>
+              </div>
+            
+           
+          </form>
+
+    </div>
+
+    {{result}}
+  
+   
+</div>

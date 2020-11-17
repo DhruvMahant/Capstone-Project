@@ -21,19 +21,19 @@ export class CompanyService {
   }
 
   getCompanyById(id: any): Observable<Company> {
-    return this.http.get<Company>(`${this.companyUrl}/${id}`);
+    return this.http.get<Company>(`${this.companyUrl}/getCompaniesByID/${id}`);
   }
 
   addCompany(company: Company): Observable<any> {
-    return this.http.post<any>(this.companyUrl, company, httpOptions);
+    return this.http.post<any>(this.companyUrl + "/addCompanies", company, httpOptions);
   }
 
   updateCompanyById(company: Company, id: any): Observable<Company> {
-    return this.http.put<Company>(`${this.companyUrl}/${id}`, company, httpOptions);
+    return this.http.put<Company>(`${this.companyUrl}/updateCompany/${id}`, company, httpOptions);
   }
 
   deleteCompanyById(id: any): Observable<Company> {
-    return this.http.delete<Company>(`${this.companyUrl}/${id}`);
+    return this.http.delete<Company>(`${this.companyUrl}/deleteCompany/${id}`);
   }
 
 }

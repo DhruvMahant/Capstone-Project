@@ -1,25 +1,35 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Admin Portal</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div *ngIf="notify" class="alert alert-success">
+                {{ notify }}
+            </div>
+            <div *ngIf="errors.length > 0" class="alert alert-danger">
+                <p *ngFor="let error of errors">
+                    {{ error }}
+                </p>
+            </div>
+            <div class="card">
+                <form class="box" [formGroup]="loginForm" (ngSubmit)="login()">
+                    <h1>Registration</h1>
+					<input type="text" [(ngModel)]="formData.firstname"  #firstname="ngModel" required name="firstname" placeholder="Firstname">
+					<input type="text" [(ngModel)]="formData.lastname" name="lastname" #lastname="ngModel" required placeholder="Lastname">
+					<input type="text" [(ngModel)]="formData.email" name="email" #email="ngModel" required  placeholder="Email">
+					<input type="text" [(ngModel)]="formData.password" name="password" #password="ngModel" required  placeholder="password">
+					<input type="text" [(ngModel)]="formData.passwordConfirmation" #passwordConfirmation="ngModel" name="passwordConfirmation" placeholder="Confirm Password" required>
+					<input type="text" [(ngModel)]="formData.addressline1" #addressline1="ngModel" name="addressline1" placeholder="Address Line 1" required>
+					<input type="text" [(ngModel)]="formData.addressline2" #addressline2="ngModel" name="addressline2" placeholder="Address Line 2" >
+					<input type="text" [(ngModel)]="formData.city" #city="ngModel" name="city" placeholder="City" required>
+					<input type="text" [(ngModel)]="formData.state" #state="ngModel" name="state" placeholder="State" required>
+					<input type="text" [(ngModel)]="formData.zipcode" #zipcode="ngModel" name="zipcode" placeholder="Zipcode" required>
+                    
+                    
+                    
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                    <input (click)="register()" type="submit" [disabled]="!registerForm.form.valid"value="Register">
 
-<!-- Popper JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</head>
-<body>
-  <app-root></app-root>
-</body>
-</html>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

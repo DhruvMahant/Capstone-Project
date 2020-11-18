@@ -10,9 +10,9 @@ import {AuthService} from '../auth/auth.service';
 export class HomeComponent implements OnInit {
 
   notify: string;
-  name: string;
 
-  constructor(private router: Router, private route: ActivatedRoute, private auth:AuthService) { }
+
+  constructor(private router: Router, private route: ActivatedRoute,) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
@@ -21,9 +21,10 @@ export class HomeComponent implements OnInit {
         this.notify = 'You have been successfully loggedin. Welcome home';
       }
     });
+    
+   
 
-    this.name = this.auth.getUsername();
-    this.name = this.name.charAt(0).toUpperCase() + this.name.substring(1);
+    
   }
 
 }

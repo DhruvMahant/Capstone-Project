@@ -15,6 +15,10 @@ const productSchema = new Schema({
       type: String
   },
 
+  image:{
+    type: String
+  },
+
   price:{
       type: Number
   }

@@ -15,6 +15,7 @@ export class AddnewcompanyComponent implements OnInit {
   });
 
   result:string;
+  error: boolean = false;
 
   constructor(public comService: CompanyService, private router:Router) { }
 
@@ -22,12 +23,24 @@ export class AddnewcompanyComponent implements OnInit {
   }
 
     addNewCompany():void{
-      this.comService.addCompany(this.companyRef.value).subscribe(data=>{
+      if(this.companyRef.controls['company'].value == "")
+      {
+        this.error = true;
+      }else{
+        this.error = false;
+        this.comService.addCompany(this.companyRef.value).subscribe(data=>{
 
-        this.router.navigate(['/companies-list']);
-        
-      },
-      (err) => {this.result = err});
+          this.router.navigate(['/companies-list']);
+          
+        },
+        (err) => {this.result = err});
+
+      }
+      
+    }
+
+    goBack():void{
+      this.router.navigate(['/companies-list']);
     }
 
 

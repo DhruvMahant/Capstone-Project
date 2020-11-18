@@ -4,6 +4,7 @@ const Product = require('../models/ProductModel');
 
 exports.findAll = (req, res) => {
     Product.find({}).populate('company').exec(function(err,data){
+        if(err) throw err;
         res.send(data);
     })
         
@@ -42,11 +43,3 @@ exports.updateById = (req, res) => {
 
 
 
-
-// .then(products => {
-//     res.send(products);
-// }).catch(err => {
-//     res.status(500).send({
-//         message: err.message
-//     });
-// });

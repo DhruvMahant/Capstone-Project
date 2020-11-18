@@ -3,6 +3,7 @@ export class Product {
     company: string;
     name: string;
     description: string;
+    image: string;
     price: number;
 
 }

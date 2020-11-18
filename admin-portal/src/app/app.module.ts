@@ -14,6 +14,7 @@ import { CompaniesListComponent } from './companies-list/companies-list.componen
 import { ProductsComponent } from './products/products.component';
 import { AddnewcompanyComponent } from './addnewcompany/addnewcompany.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddnewproductComponent } from './addnewproduct/addnewproduct.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ServicesComponent,
     CompaniesListComponent,
     ProductsComponent,
-    AddnewcompanyComponent
+    AddnewcompanyComponent,
+    AddnewproductComponent
   
   ],
   imports: [

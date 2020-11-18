@@ -4,11 +4,6 @@
         <div class="col-12 col-sm-8 col-md-6 col-lg-4" *ngFor="let p of products; let rowIndex=index">
             <div class="card">
                 <img class="card-img" src="{{p.image}}" alt="Vans">
-                <div class="card-img-overlay d-flex justify-content-end">
-                    <a href="#" class="card-link text-danger like">
-                        <i class="fas fa-heart"></i>
-                    </a>
-                </div>
                 <div class="card-body">
                     <h4 class="card-title">{{p.name}}</h4>
                     <p class="card-text">
@@ -18,7 +13,8 @@
                         <div class="price text-success">
                             <h5 class="mt-4">{{p.price | currency:'USD'}}</h5>
                         </div>
-                        <a href="#" class="btn btn-danger mt-3"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                        <input type="button" (click)="addToCart(rowIndex)" width="20px" class="btn btn-danger mt-2 " value="Add to Cart">
+
                     </div>
                 </div>
             </div>

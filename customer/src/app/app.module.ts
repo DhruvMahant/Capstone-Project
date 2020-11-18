@@ -11,6 +11,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { AuthModule } from './auth/auth.module';
 import { ServicesComponent } from './services/services.component';
 import { AllProductsComponent } from './all-products/all-products.component';
+import { CartComponent } from './cart/cart.component';
 
 
 
@@ -22,6 +23,7 @@ import { AllProductsComponent } from './all-products/all-products.component';
     ProfileComponent,
     ServicesComponent,
     AllProductsComponent,
+    CartComponent,
     
   ],
   imports: [

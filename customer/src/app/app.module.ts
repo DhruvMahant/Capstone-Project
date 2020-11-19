@@ -12,6 +12,8 @@ import { AuthModule } from './auth/auth.module';
 import { ServicesComponent } from './services/services.component';
 import { AllProductsComponent } from './all-products/all-products.component';
 import { CartComponent } from './cart/cart.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -29,7 +31,9 @@ import { CartComponent } from './cart/cart.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-  
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     
     AuthModule
   ],

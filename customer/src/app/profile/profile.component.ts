@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth/auth.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-profile',
@@ -6,10 +9,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  formData: any = {};
+  errors: any = [];
 
-  constructor() { }
+
+  constructor(private auth: AuthService, private router: Router) { }
 
   ngOnInit(): void {
+  }
+  register(): void {
+    console.log(this.formData);
+    this.errors = [];
+    this.auth.register(this.formData)
+      .subscribe(() => {
+        this.router.navigate(['/auth/login'], { queryParams: { registered: 'success' } });
+       },
+        (errorResponse) => {
+          this.errors.push(errorResponse.error.error);
+        });
   }
 
 }

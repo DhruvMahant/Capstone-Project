@@ -12,6 +12,8 @@ export class CartComponent implements OnInit {
   total: number = 0;
   formData: any = {};
   errors: any = [];
+  cartDiv: boolean = true;
+  checkoutDiv : boolean = false;
 
   checkoutF = new FormGroup({
     fullname: new FormControl(),
@@ -62,6 +64,11 @@ export class CartComponent implements OnInit {
 
     this.ngOnInit();
 
+  }
+
+  checkoutCart():void{
+    this.cartDiv = false;
+    this.checkoutDiv = true;
   }
 
 }
